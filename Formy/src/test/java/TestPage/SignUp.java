@@ -7,17 +7,18 @@ import org.testng.annotations.Test;
 public class SignUp extends Base{
 @Test
     public void ValidSignUp(){
-       FormPage FormObject = new FormPage(driver);
-       HomePage HomeObject = new HomePage(driver);
-       HomeObject.OpenSignUp();
-       FormObject.EnterFirstName("Mohamed");
-       FormObject.EnterLastName("Elbadri");
-       FormObject.EnterJobTitle("student");
-       FormObject.EnterEducationLevel();
-       FormObject.EnterSex();
-       FormObject.EnterExperienceYear(2);
-       FormObject.EnterDate("04/10/2023");
-       FormObject.PressSubmit();
-       Assert.assertTrue(FormObject.GetActualAlertMessage().contains(FormObject.GetExpectedAlertMessage()),"Invalid Data");
+       FormPage form = new FormPage(driver);
+       HomePage home = new HomePage(driver);
+       home.OpenHomePage();
+       home.OpenSignUp();
+       form.EnterFirstName("Mohamed");
+       form.EnterLastName("Elbadri");
+       form.EnterJobTitle("student");
+       form.EnterEducationLevel();
+       form.EnterSex();
+       form.EnterExperienceYear(2);
+       form.EnterDate("04/10/2023");
+       form.PressSubmit();
+       Assert.assertTrue(form.GetActualAlertMessage().contains(form.GetExpectedAlertMessage()),"Invalid Data");
     }
 }
