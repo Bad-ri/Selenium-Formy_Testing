@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-
 public class HomePage{
     private WebDriver driver;
     private WebDriverWait wait;
@@ -14,7 +13,7 @@ public class HomePage{
         wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
     By form_link = By.linkText("Form");
-    By drag_and_drop = By.linkText("Drag and Drop");
+    By scroll = By.linkText("Page Scroll");
     By home_page = By.cssSelector("a[id=\"logo\"]");
     public void OpenHomePage(){
         wait.until(ExpectedConditions.elementToBeClickable(home_page));
@@ -24,8 +23,8 @@ public class HomePage{
         wait.until(ExpectedConditions.elementToBeClickable(form_link));
         driver.findElement(form_link).click();
     }
-    public void OpenDragAndDrop(){
-        wait.until(ExpectedConditions.elementToBeClickable(drag_and_drop));
-        driver.findElement(drag_and_drop).click();
+    public void OpenScrollPage(){
+        wait.until(ExpectedConditions.elementToBeClickable(scroll));
+        driver.findElement(scroll).click();
     }
 }

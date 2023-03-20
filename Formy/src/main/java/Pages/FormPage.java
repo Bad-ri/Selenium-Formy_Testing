@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class FormPage{
     private WebDriver driver;
@@ -21,6 +22,7 @@ public class FormPage{
     By sex = By.cssSelector("input[id=\"checkbox-2\"]");
     By experience_year = By.cssSelector("select[id=\"select-menu\"]");
     By date = By.cssSelector("input[id=\"datepicker\"]");
+    By date_list = By.cssSelector("td[class=\"day\"]");
     By submit_button = By.cssSelector("a[role=\"button\"]");
     By alert_message = By.cssSelector("div[role=\"alert\"]");
     public void EnterFirstName(String FirstName){
@@ -52,5 +54,10 @@ public class FormPage{
         return driver.findElement(alert_message).getText();
     }
     public String GetExpectedAlertMessage(){return "The form was successfully submitted!";
+    }
+    public int GetDayList(){
+        driver.findElement(date).click();
+        List list = driver.findElements(date_list);
+        return list.size();
     }
 }

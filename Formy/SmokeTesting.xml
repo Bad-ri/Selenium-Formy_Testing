@@ -2,8 +2,13 @@
 <suite name="Formy" verbose="1">
     <test name="smoke_testing">
         <classes>
-            <class name="TestPage.DragAndDrop"></class>
-            <class name="TestPage.SignUp"></class>
+            <!--
+             <class name="TestPage.ScreenShot"></class>
+             <class name="TestPage.Browser"></class>
+             <class name="TestPage.SignUp"></class>
+             <class name="TestPage.Capabilities"></class>
+             <class name="TestPage.Action"></class>
+            -->
         </classes>
     </test>
 </suite>
