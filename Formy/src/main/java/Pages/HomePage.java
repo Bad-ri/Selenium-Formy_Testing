@@ -13,8 +13,10 @@ public class HomePage{
         wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
     By form_link = By.linkText("Form");
-    By scroll = By.linkText("Page Scroll");
+    By alert_link = By.linkText("Modal");
+    By scroll_link = By.linkText("Page Scroll");
     By home_page = By.cssSelector("a[id=\"logo\"]");
+    By model_button = By.cssSelector("button[id=\"modal-button\"]");
     public void OpenHomePage(){
         wait.until(ExpectedConditions.elementToBeClickable(home_page));
         driver.findElement(home_page).click();
@@ -24,7 +26,13 @@ public class HomePage{
         driver.findElement(form_link).click();
     }
     public void OpenScrollPage(){
-        wait.until(ExpectedConditions.elementToBeClickable(scroll));
-        driver.findElement(scroll).click();
+        wait.until(ExpectedConditions.elementToBeClickable(scroll_link));
+        driver.findElement(scroll_link).click();
+    }
+    public void OpenAlertPage(){
+        wait.until(ExpectedConditions.elementToBeClickable(alert_link));
+        driver.findElement(alert_link).click();
+        wait.until(ExpectedConditions.elementToBeClickable(model_button));
+        driver.findElement(model_button).click();
     }
 }

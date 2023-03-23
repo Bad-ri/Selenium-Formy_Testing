@@ -4,10 +4,7 @@ import Pages.HomePage;
 import com.google.common.io.Files;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-
-import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 
